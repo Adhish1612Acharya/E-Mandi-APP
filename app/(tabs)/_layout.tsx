@@ -1,34 +1,50 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
-
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import { Tabs } from "expo-router";
+import { Ionicons } from "@expo/vector-icons"; // Import icons
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-      }}>
+    <Tabs>
       <Tabs.Screen
-        name="index"
+        name="(home)"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
+          title: "Home",
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="home-outline" size={size} color={"black"} />
           ),
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="(creating)"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+          title: "Add",
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="add-circle-outline" size={size} color={"black"} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="(orders)"
+        options={{
+          title: "Orders",
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="cart-outline" size={size} color={"black"} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="(notifications)"
+        options={{
+          title: "Notifications",
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons
+              name="notifications-outline"
+              size={size}
+              color={"black"}
+            />
           ),
         }}
       />
