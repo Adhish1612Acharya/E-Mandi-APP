@@ -16,7 +16,7 @@ import { RadioButtonProps } from "react-native-paper";
 import * as ImagePicker from "expo-image-picker";
 import * as DocumentPicker from "expo-document-picker";
 import axios from "axios";
-import server from "@/server";
+import server from "../../../server";
 import { useFocusEffect, useNavigation } from "expo-router";
 
 import { GoogleGenerativeAI } from "@google/generative-ai";

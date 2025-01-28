@@ -22,6 +22,7 @@ import { Ionicons } from "@expo/vector-icons"; // Import the icon libra
 import { useRoute } from "@react-navigation/native";
 import axios from "axios";
 import server from "@/server";
+import React from "react";
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
